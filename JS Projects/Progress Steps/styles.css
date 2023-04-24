@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&dispaly=swap');
 
+:root {
+    --line-fill
+}
+
+
 * {
     box-sizing: border-box;
 }
@@ -52,4 +57,21 @@ body {
     width: 0%;
     z-index: -1;
     transition: 0.4s ease;
+}
+
+.circle {
+    background-color: #fff;
+    color: #999;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #e0e0e0;
+    transition: .4s ease;
+}
+
+.circle.active {
+    border-color: #3498db;
 }
