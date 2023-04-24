@@ -1,0 +1,2 @@
+- Whenever using BEFORE or AFTER in css, make sure you use CONTENT: '';
+
