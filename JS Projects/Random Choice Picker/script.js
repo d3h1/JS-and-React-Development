@@ -1,0 +1,1 @@
+const tagsNeeded = document.querySelectorAll('.tag')
