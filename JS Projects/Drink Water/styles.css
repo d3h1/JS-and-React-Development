@@ -77,7 +77,6 @@ h3 {
     flex: 1;
     transition: 0.3s ease;
 }
-
 .remained span {
     font-size: 20px;
     font-weight: bold;
@@ -88,7 +87,7 @@ h3 {
 }
 
 .percentage {
-    background-color: var(--border-fill);
+    background-color: var(--fill-color);
     font-size: 30px;
     display: flex;
     align-items: center;
