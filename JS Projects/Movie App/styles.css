@@ -77,20 +77,36 @@ main {
 }
 
 .movie-info {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     padding: 0.25rem 0.5rem;
     border-radius: 3px;
     font-weight: bold;
 }
 
 .movie-info span.green {
-    color: lightgreen;
+    color: rgb(114, 255, 114);
 }
 
 .movie-info span.orange {
-    color: lightsalmon;
+    color: rgb(255, 141, 96);
 }
 
 .movie-info span.red {
-    color: lightcoral;
+    color: rgb(249, 96, 96);
+}
+
+.overview {
+    background-color: #fff;
+    padding: 0.5rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.movie:hover .overview{
+    transform: translateY(0)
 }
