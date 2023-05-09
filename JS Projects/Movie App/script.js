@@ -46,19 +46,25 @@ function showResults(movies) {
         `
             <div class="movie">
 
-                <img src="./movietheatre.jpg" alt="movie-bg">
+                <img src="${IMG_PATH + poster_path}" alt="${title}">
 
                 <div class="movie-info">
-                    <h3>Movie Titles</h3>
-                    <span class="red">9.8</span>
+                    <h3>${title}</h3>
+                    <span class="red">${vote_average}</span>
                 </div>
 
                 <div class="overview">
-                    <h3>Overview</h3>
+                    <h3>${overview}</h3>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde assumenda laborum similique rem at deserunt optio labore architecto, recusandae expedita iste ratione magni, voluptate vitae aliquid ad quae culpa consectetur?
                 </div>
-                
+
             </div>
         `
     })
+}
+
+function getClassByRate(vote) {
+    if(vote >= 8) {
+        return 
+    }
 }
