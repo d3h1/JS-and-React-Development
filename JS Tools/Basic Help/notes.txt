@@ -4,3 +4,6 @@
 top: 50%;
 transform: translateY(-50%); 
 /* Moves the arrows to the exact middle by using TOP and TRANSFORM*/
+
+THIS DOES NOT WORK WITH ARROW FUNCTIONS, we need to use a regular function
+this.appendChild(x)
