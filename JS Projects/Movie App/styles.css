@@ -78,7 +78,7 @@ main {
 
 .movie-info {
     background-color: var(--secondary-color);
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 2rem;
     border-radius: 3px;
     font-weight: bold;
 }
@@ -97,7 +97,7 @@ main {
 
 .overview {
     background-color: #fff;
-    padding: 0.5rem;
+    padding: 2rem;
     position: absolute;
     left: 0;
     bottom: 0;
