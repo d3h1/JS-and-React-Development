@@ -1,15 +1,34 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&dispaly=swap');
-
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Muli', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0;
+  display: flex;
+  background-color: aqua;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.empty {
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+  border: solid 3px #000;
+  background: #fff;
+}
+
+.fill {
+  background-image: url("https://source.unsplash.com/random/150x150/?abstract");
+  height: 145px;
+  width: 145px;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  body {
+    flex-direction: column;
+  }
 }
