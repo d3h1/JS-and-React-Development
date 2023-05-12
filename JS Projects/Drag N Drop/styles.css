@@ -4,7 +4,7 @@
 
 body {
   display: flex;
-  background-color: aqua;
+  background-color: #d3f6cc;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -25,6 +25,16 @@ body {
   height: 145px;
   width: 145px;
   cursor: pointer;
+}
+
+.hold {
+  border: solid 5px #ccc;
+}
+
+.hovered {
+  background-color: #333;
+  border-color: #fff;
+  border-style: dashed;
 }
 
 @media (max-width: 800px) {
