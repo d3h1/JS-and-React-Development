@@ -13,6 +13,25 @@ body {
 }
 
 .container {
-    max-width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* TODO NAV */
+
+
+.hero {
+    background-image: url('https://images.pexels.com/photos/450035/pexels-photo-450035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: ;
 }
 
