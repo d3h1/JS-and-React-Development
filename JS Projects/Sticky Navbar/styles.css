@@ -17,7 +17,41 @@ body {
     margin: 0 auto;
 }
 
-/* TODO NAV */
+.nav {
+    position: fixed;
+    background-color: #222;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: 0.3s ease-in-out all;
+}
+
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    transition: 0.3s ease-in-out all;
+}  
+
+.nav ul {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav a  {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    transition: 0.3s ease-in-out all;
+}
+
+.nav li:hover {
+    transform: scale(.95);
+}
 
 
 .hero {
@@ -32,6 +66,40 @@ body {
     align-items: center;
     text-align: center;
     position: relative;
-    margin-bottom: ;
+    margin-bottom: 20px;
+    z-index: -2;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin: -20px 0 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.content h2, 
+.content h3 {
+    font-size: 150%;
+    margin: 20px 0;
+}
+
+.content p {
+    color: #555;
+    line-height: 30px;
+    letter-spacing: 1.2px;
 }
 
