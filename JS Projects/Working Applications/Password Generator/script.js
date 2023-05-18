@@ -16,7 +16,17 @@ const randomFunc = {
 }
 
 clipboardEl.addEventListener('click', () => {
+    const textarea = document.createElement('textarea')
+    const password = resultEl.innerText
 
+    // If nothing in password, return empty
+    if(!password) {
+        return
+    }
+
+    // The way we copy to clipboard
+    navigator.clipboard.writeText(password);
+    alert('Password copied to clipboard!')
 })
 
 // Generate the checked values
@@ -41,7 +51,7 @@ function generatePassword(lower, upper, number, symbol, length) {
 
     // If nothing is checked, you get nothing in the output
     if(typesCount === 0) {
-        return ''
+        return 'Nothing Checked'
     }
 
     for(let i = 0; i < length; i += typesCount) {
