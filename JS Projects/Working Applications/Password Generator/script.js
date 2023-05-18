@@ -16,7 +16,6 @@ const randomFunc = {
 }
 
 clipboardEl.addEventListener('click', () => {
-    const textarea = document.createElement('textarea')
     const password = resultEl.innerText
 
     // If nothing in password, return empty
