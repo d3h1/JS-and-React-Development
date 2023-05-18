@@ -6,4 +6,4 @@
 ## UNSPLASH RANDOM : <div style="background-image: url('https://source.unsplash.com/random/?landscape')"></div>
 
 
-## BEST BOX SHADOW : <div style="box-shadow: 0 5px 10px rgba(154,160,185,0.05), 0 15px 40px rgba(0,0,0,0.1)"></div>
+## BEST BOX SHADOW : <div style="box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.1)"></div>
