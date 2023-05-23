@@ -6,10 +6,58 @@
 
 body {
     font-family: 'Muli', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 0;
     height: 100vh;
     overflow: hidden;
     margin: 0;
+}
+
+.counter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* !This puts the actual number in the middle, so we have to use transform to prevent that */
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.counter.hide {
+    transform: translate(-50%, -50%) scale(0);
+    animation: hide .2s ease-out;
+}
+
+.final {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    text-align: center;
+}
+
+.final.show {
+    transform: translate(-50%, -50%) scale(1);
+    animation: show .2s ease-out;
+}
+
+@keyframes hide {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+@keyframes show {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.6);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
