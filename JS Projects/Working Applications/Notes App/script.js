@@ -58,5 +58,6 @@ function updateLocalStorage () {
 
     notesText.forEach(note => notes.push(note.value))
 
+    // WE have to use JSON stringify because we are getting an array, and you can only pass strings to local storage
     localStorage.setItem('notes', JSON.stringify(notes))
 }
