@@ -1,10 +1,13 @@
+/* GLOBAL STYLE */
 @import url('https://fonts.googleapis.com/css?family=Muli&dispaly=swap');
 
+/* DOM STYLE */
 * {
     box-sizing: border-box;
 }
 
 body {
+    background-color: #111;
     font-family: 'Muli', sans-serif;
     display: flex;
     align-items: center;
@@ -13,3 +16,34 @@ body {
     overflow: hidden;
     margin: 0;
 }
+
+/* MAIN CONTAINER*/
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 400px;
+}
+
+/* CONTAINER CLASSES */
+.square {
+    background-color: #1d1d1d;
+    box-shadow:0px 0px 2px rgba(0, 0, 0, 0.1) ;
+    height: 16px;
+    width: 16px;
+    margin: 2px;
+    transition: 2s ease ;
+}
+
+.square:hover {
+    transition-duration: 0s;
+}
+
+/* CONTAINER IDS */
+
+
+/* ANIMATIONS */
+
+
+/* RESPONSIVE FEATURES */
