@@ -1,0 +1,87 @@
+/* GLOBAL STYLE */
+@import url('https://fonts.googleapis.com/css?family=Muli&dispaly=swap');
+
+/* DOM STYLE */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #777;
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+/* MAIN CONTAINER*/
+.container {
+    background-color: #fff;
+    border: 3px solid #333;
+    border-radius: 5px;
+    max-width: 1000px;
+    text-align: center;
+    padding: 40px;
+}
+
+/* CONTAINER CLASSES */
+.numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.code {
+    border-radius: 5px;
+    font-size: 60px;
+    height: 100px;
+    width: 100px;
+    border: 1px solid #d3d3d3;
+    margin: 1%;
+    text-align: center;
+    font-weight: 300;
+}
+
+.code::-webkit-outer-spin-button,
+.code::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.code:valid {
+    border-color: #3498db;
+    box-shadow: 0 10px 10px -5px rgba(0,0,0,0.25);
+}
+
+.submit {
+    background-color: #fff;
+    color: #333;
+    font-family: inherit;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #3498db;
+    cursor: pointer
+}
+
+/* CONTAINER IDS */
+
+
+/* ANIMATIONS */
+
+
+/* RESPONSIVE FEATURES */
+@media(max-width: 600px) {
+    .numbers {
+        flex-wrap: wrap;
+    }
+
+    .code {
+        font-size: 50px;
+        height: 80px;
+        width: 80px;
+    }
+}
