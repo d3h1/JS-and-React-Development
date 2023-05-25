@@ -1,10 +1,13 @@
+/* GLOBAL STYLE */
 @import url('https://fonts.googleapis.com/css?family=Muli&dispaly=swap');
 
+/* DOM STYLE */
 * {
     box-sizing: border-box;
 }
 
 body {
+    background-color: #555;
     font-family: 'Muli', sans-serif;
     display: flex;
     align-items: center;
@@ -13,3 +16,17 @@ body {
     overflow: hidden;
     margin: 0;
 }
+
+/* MAIN CONTAINER*/
+
+
+/* CONTAINER CLASSES */
+
+
+/* CONTAINER IDS */
+
+
+/* ANIMATIONS */
+
+
+/* RESPONSIVE FEATURES */
