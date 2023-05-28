@@ -15,7 +15,7 @@ range.addEventListener('input', (e) => {
 
     // This is to make the number go with slider(thumb) do not need this to make it static
     const range_width = getComputedStyle(e.target).getPropertyValue('width')
-
+    
 
     label.innerHTML = value
 })
