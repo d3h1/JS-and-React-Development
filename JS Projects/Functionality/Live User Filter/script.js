@@ -2,7 +2,7 @@
 
 
 // IDS
-const results = document.getElementById('result')
+const result = document.getElementById('result')
 const filter = document.getElementById('filter')
 
 // OTHER
@@ -11,13 +11,15 @@ const listItems = []
 // EVENTS
 getData()
 
+filter.addEventListener('input', (e) => filterData(e.target.value))
+
 // FUNCTIONS
 async function getData() {
     const res = await fetch('https://randomuser.me/api?results=50')
     const { results } = await res.json()
 
     // Clear Results
-    results.innerHTML = ''
+    result.innerHTML = ''
 
     results.forEach(user => {
         const li = document.createElement('li')
@@ -32,5 +34,18 @@ async function getData() {
                 <p>${user.location.city}, ${user.location.country}</p>
             </div>
         `
+
+        result.appendChild(li)
+    })
+}
+
+function filterData(searchterm) {
+    listItems.forEach(item => {
+        if(item.innerText.toLowerCase().includes(searchterm.toLowerCase())) {
+            item.classList.remove('hide')
+        }
+        else {
+            item.classList.add('hide')
+        }
     })
 }
