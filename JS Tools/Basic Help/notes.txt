@@ -9,3 +9,5 @@ THIS DOES NOT WORK WITH ARROW FUNCTIONS, we need to use a regular function
 this.appendChild(x)
 
 const length = +lengthEl.value // Adding a plus in front parses this as a number
+
+('contextmenu', () => {}) THIS IS A RIGHT CLICK IN JS
