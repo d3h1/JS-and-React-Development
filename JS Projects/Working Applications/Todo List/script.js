@@ -7,7 +7,7 @@ const input = document.getElementById('input')
 const todosUL = document.getElementById('todos')
 
 // OTHER
-
+localStorage
 
 // EVENTS
 form.addEventListener('submit', (e) => {
