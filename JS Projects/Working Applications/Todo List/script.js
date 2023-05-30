@@ -7,9 +7,13 @@ const input = document.getElementById('input')
 const todosUL = document.getElementById('todos')
 
 // OTHER
-localStorage
+const todos = JSON.parse(localStorage.getItem('todos')) // Puts this into an array only way to do it is take string and parse into an array
 
 // EVENTS
+if (todos) {
+    todos.forEach(todo => addTodo(todo))
+}
+
 form.addEventListener('submit', (e) => {
     e.preventDefault()
 
@@ -32,7 +36,9 @@ function addTodo(todo) {
 
         todoEl.innerText = todoText
         // Left Click causes completed
-        todoEl.addEventListener('click', () => todoEl.classList.toggle('completed'))
+        todoEl.addEventListener('click', () => {
+            todoEl.classList.toggle('completed')
+        })
         // Right Click causes delete
         todoEl.addEventListener('contextmenu', (e) => {
             e.preventDefault() // Prevents the right click default whic hbrings up inspect, zoom, options like that
@@ -43,5 +49,22 @@ function addTodo(todo) {
         todosUL.appendChild(todoEl)
 
         input.value = ''
+
+        updateLs()
     }
+}
+
+function updateLs() {
+    const todosEl = document.querySelectorAll('li')
+
+    const todos = []
+
+    todosEl.forEach(todoEl => {
+        todos.push({
+            text: todoEl.innerText,
+            completed: todoEl.classList.contains('completed')
+        })
+    })
+
+    localStorage.setItem('todos', JSON.stringify(todos))
 }
