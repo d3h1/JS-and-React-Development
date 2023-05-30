@@ -6,7 +6,7 @@ age = 15
 // console.log(age)
 
 // !------------------------!
-// CONST -- Cannot Change with out specfic functionalities
+// CONST -- Cannot Change with out specfic functionalities -- Mainly use const unless let is specifically needed 
 const firstName = 'Deni'
 // console.log(firstName)
 
@@ -35,3 +35,6 @@ console.log(person.name)
 // You can add inside the object
 person.email = 'dcab101@gmail.com'
 console.log(person)
+
+const d = 10, e = 5, f = 30
+console.log(d + e + f)
