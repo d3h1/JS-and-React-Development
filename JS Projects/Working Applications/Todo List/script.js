@@ -38,12 +38,14 @@ function addTodo(todo) {
         // Left Click causes completed
         todoEl.addEventListener('click', () => {
             todoEl.classList.toggle('completed')
+            updateLs()
         })
         // Right Click causes delete
         todoEl.addEventListener('contextmenu', (e) => {
             e.preventDefault() // Prevents the right click default whic hbrings up inspect, zoom, options like that
 
             todoEl.remove()
+            updateLs()
         })
 
         todosUL.appendChild(todoEl)
