@@ -2,8 +2,8 @@
 ## DEFINITIONS
 | Term      | Description |
 | ----------- | ----------- |
-| Primitive Types | Number, Boolean, Null, Undefined, Symbol, BigInt |
-| Reference Types   | Arrays, Functions, Objects |
+| Primitive Types | Number, Boolean, Null, Undefined, Symbol, BigInt -- Work with out storage or reference |
+| Reference Types   | Arrays, Functions, Objects -- Stored and Referenced |
 
 ## JS FUNCTIONALITY
 'THIS' does NOT work with arrow functions, 
