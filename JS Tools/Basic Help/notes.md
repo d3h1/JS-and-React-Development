@@ -25,6 +25,17 @@ Strings and their functions
 const s = new String('Hello World') // We do NEW STRNG to turn this into to object to make proto work
 x = s.__proto__; // Shows you keys, what youu can do with this string, etc
 ```
+Dates -- Check Date Object for more
+```js
+    let x;
+    let d = new Date();
+
+    // Some Common Date Values
+    x = d.toString()
+    x = d.getTime()
+    x = d.valueOf()
+    x = d.getFullYear() // Will get current or you can pass in a date above
+```
 #### DOM Functionalities
 ```js
 ('contextmenu', () => {}); // Right Click
