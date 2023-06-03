@@ -1,5 +1,9 @@
 import React from 'react'
 
+export const metadata = {
+  title: 'The Cabaravdic Industries Team'
+}
+
 const TeamPage = () => {
   return (
     <div>
