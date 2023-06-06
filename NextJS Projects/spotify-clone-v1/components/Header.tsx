@@ -1,5 +1,28 @@
-const Header = () => {
-    return ( <div>Hello Header</div> );
+'use client';
+
+import { useRouter } from "next/navigation";
+import { twMerge } from 'tailwind-merge'
+
+interface HeaderProps {
+    children: React.ReactNode;
+    className?: string;
+}
+
+const Header: React.FC<HeaderProps> = ({
+    children,
+    className
+}) => {
+    const router = useRouter();
+
+    const handleLogout = () => {
+        // Handle Logout in the future
+    }
+
+    return ( 
+    <div className="{twMerge}">
+        
+    </div>
+     );
 }
  
 export default Header;
