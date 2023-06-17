@@ -9,6 +9,9 @@ const HomePage = () => {
         <Link href='/'>Home</Link>
       </li>
       <li>
+        <Link href='/contact'>Comtact</Link>
+      </li>
+      <li>
         <Link href='/about'>About</Link>
       </li>
       <li>
