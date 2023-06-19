@@ -12,7 +12,7 @@ body {
 
 .container {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   height: 100vh;
   max-width: 100%;
   overflow: auto;
@@ -26,7 +26,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #17062c;
-  color: #fff;
+  color: #ee47b1;
   padding: 20px;
 }
 
@@ -62,7 +62,7 @@ body {
   border:solid 1px black;
   width: 10%;
   color: #fff;
-  background-color: #bb4790;
+  background-color: #ee47b1;
   padding: 8px;
   border-radius: 50%;
   position: absolute;

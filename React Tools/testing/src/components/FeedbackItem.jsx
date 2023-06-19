@@ -1,6 +1,6 @@
 // import { useState } from "react";
-import { FaTimes, } from 'react-icons/fa'
-import PropTypes from 'prop-types';
+import { FaTimes } from "react-icons/fa";
+import PropTypes from "prop-types";
 import Card from "./shared/card";
 
 // !Calling handle delete from feedback list as a prop
@@ -22,10 +22,10 @@ function FeedbackItem({ item, handleDelete }) {
 
   return (
     // !Conditional class of revserse in the Card.jsx and can call it here
-    <Card>
+    <Card className='container'>
       <div className="num-display">{item.rating}</div>
       <button onClick={() => handleDelete(item.id)} className="close">
-        <FaTimes color='purple'/>
+        <FaTimes color="purple" />
       </button>
       <div className="text-display">{item.text}</div>
     </Card>
@@ -34,6 +34,6 @@ function FeedbackItem({ item, handleDelete }) {
 
 FeedbackItem.propTypes = {
   item: PropTypes.object.isRequired,
-}
+};
 
 export default FeedbackItem;
