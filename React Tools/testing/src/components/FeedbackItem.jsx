@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import card from "./shared/card";
+import Card from "./shared/card";
 
 function FeedbackItem({item}) {
   // const [rating, setRating] = useState(7);
@@ -13,10 +13,11 @@ function FeedbackItem({item}) {
   // };
 
   return (
-    <card>
+    // !Conditional class of revserse in the Card.jsx and can call it here
+    <Card reverse={true}>
       <div className="num-display">{item.rating}</div>
       <div className="text-display">{item.text}</div>
-    </card>
+    </Card>
   );
 }
 
