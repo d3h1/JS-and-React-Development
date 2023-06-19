@@ -22,7 +22,7 @@ function Card({ children, reverse }) {
 
 // We can make it a default prop that we dont have to call back to on the feedback list itself, everything about the card can be done in the card
 Card.defaultProps = {
-  reverse: true,
+  reverse: false,
 }
 
 Card.propTypes = {
