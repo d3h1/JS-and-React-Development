@@ -14,7 +14,7 @@ function FeedbackItem({item}) {
 
   return (
     // !Conditional class of revserse in the Card.jsx and can call it here
-    <Card reverse={true}>
+    <Card>
       <div className="num-display">{item.rating}</div>
       <div className="text-display">{item.text}</div>
     </Card>

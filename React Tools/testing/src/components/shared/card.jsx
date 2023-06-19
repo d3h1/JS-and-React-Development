@@ -20,4 +20,8 @@ function Card({ children, reverse }) {
   // )
 }
 
+Card.defaultProps = {
+  reverse: true,
+}
+
 export default Card
