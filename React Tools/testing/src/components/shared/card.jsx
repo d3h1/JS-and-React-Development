@@ -1,4 +1,4 @@
-import React from 'react'
+import PropTypes from 'prop-types'
 
 function Card({ children, reverse }) {
 
@@ -20,8 +20,14 @@ function Card({ children, reverse }) {
   // )
 }
 
+// We can make it a default prop that we dont have to call back to on the feedback list itself, everything about the card can be done in the card
 Card.defaultProps = {
   reverse: true,
+}
+
+Card.propTypes = {
+  children: PropTypes.node.isRequired,
+  reverse: PropTypes.bool,
 }
 
 export default Card
