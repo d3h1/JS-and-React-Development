@@ -22,7 +22,7 @@ function FeedbackItem({ item, handleDelete }) {
 
   return (
     // !Conditional class of revserse in the Card.jsx and can call it here
-    <Card className='container'>
+    <Card>
       <div className="num-display">{item.rating}</div>
       <button onClick={() => handleDelete(item.id)} className="close">
         <FaTimes color="purple" />

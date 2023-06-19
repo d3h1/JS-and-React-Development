@@ -12,7 +12,7 @@ body {
 
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   height: 100vh;
   max-width: 100%;
   overflow: auto;
@@ -28,6 +28,19 @@ body {
   background-color: #17062c;
   color: #ee47b1;
   padding: 20px;
+}
+
+.feedback-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.feedback-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
