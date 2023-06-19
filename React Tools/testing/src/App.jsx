@@ -12,7 +12,7 @@ const App = () => {
         <>
             <Header />
             <div className="container">
-                <FeedbackList feedback={feedback} />
+                <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
             </div>
         </>
      );
