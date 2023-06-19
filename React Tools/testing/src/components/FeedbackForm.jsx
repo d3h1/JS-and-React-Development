@@ -8,6 +8,21 @@ function FeedbackForm() {
   const [message, setMessage] = useState("");
 
   const handleTextChange = (e) => {
+    // Validation will run here when we start typing something
+
+    // Cheacking first if there is text 
+    if(text === '') {
+      setBtnDisabled(true)
+      setMessage(null)
+    } 
+    else if(text !== '' && text.trim().length <= 10) {
+      setMessage('Text must be at least 10 characters')
+      setBtnDisabled(true)
+    }
+    else {
+      setBtnDisabled(false)
+      setMessage(null)
+    }
     setText(e.target.value);
   };
 
@@ -24,10 +39,11 @@ function FeedbackForm() {
             value={text}
           />
           {/* Custom button */}
-          <Button type="submit">
+          <Button type="submit" isDisabled={btnDisabled}>
             Send
           </Button>
         </div>
+        {message && <div className="message">{message}</div>}
       </form>
     </Card>
   );
