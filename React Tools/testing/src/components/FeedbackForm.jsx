@@ -1,15 +1,16 @@
 import { useState } from "react";
 import Card from "./shared/card";
 import Button from "./shared/button";
+import RatingSelect from "./RatingSelect";
 
 function FeedbackForm() {
   const [text, setText] = useState("");
+  const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
 
   const handleTextChange = (e) => {
-    // Validation will run here when we start typing something
-
+    // !Validation will run here when we start typing something
     // Cheacking first if there is text 
     if(text === '') {
       setBtnDisabled(true)
@@ -30,7 +31,7 @@ function FeedbackForm() {
     <Card>
       <form>
         <h2>How would you rate your service with us?</h2>
-        {/* @todo - rating select component */}
+        <RatingSelect />
         <div className="input-group">
           <input
             onChange={handleTextChange}
