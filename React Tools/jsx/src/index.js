@@ -26,7 +26,10 @@ function App() {
 
       {/* We can customize things like input with PROPS */}
       {/* You are allowed to provide an OBJECT as a PROP */}
-      <input type="number" min={minValue} max={10} style={{ backgroundColor: 'lightgreen' }} placeholder="hello"/>
+      <input type="number" min={minValue} max={10} style={{ backgroundColor: 'lightgreen' }} readOnly={true} spellCheck={true} placeholder="hello"/>
+      <br/>
+      <br/>
+      <textarea autoFocus={false}/>
     </div>
     ) 
 }
