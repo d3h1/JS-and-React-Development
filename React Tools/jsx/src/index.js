@@ -15,11 +15,18 @@ function App() {
     message = 'Hello there!'
   }
 
+  const minValue = 5
+
+  // !!!OBJECTS TO NOT DISPLAY other than as a PROP
   return (
     <div>
       {/* Short hand JS functions are very useful to minimize functions above */}
       <h1>{Math.random().toFixed(1)} = {message}</h1>
-      <h2>{new Date().toLocaleTimeString()}</h2>
+      <h3>{new Date().toLocaleTimeString()}</h3>
+
+      {/* We can customize things like input with PROPS */}
+      {/* You are allowed to provide an OBJECT as a PROP */}
+      <input type="number" min={minValue} max={10} style={{ backgroundColor: 'lightgreen' }} placeholder="hello"/>
     </div>
     ) 
 }
