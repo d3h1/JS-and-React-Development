@@ -10,7 +10,18 @@ const root = createRoot(rootElement);
 
 // Component created
 function App() {
-  return <h1>Hi there!</h1>
+  let message = 'Bye there!'
+  if (Math.random() > 0.5) {
+    message = 'Hello there!'
+  }
+
+  return (
+    <div>
+      {/* Short hand JS functions are very useful to minimize functions above */}
+      <h1>{Math.random().toFixed(1)} = {message}</h1>
+      <h2>{new Date().toLocaleTimeString()}</h2>
+    </div>
+    ) 
 }
 
 // Show component
