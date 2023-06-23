@@ -1,7 +1,7 @@
 // Import the React and ReactDOM Libraries
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App";
+import MyApp1, { message } from "./Exports";
 
 // Reference to the div with with ID Root
 const rootElement = document.getElementById('root')
@@ -12,5 +12,8 @@ const root = createRoot(rootElement);
 
 // Show component
 root.render(
-  <App />
+  <div>
+    <MyApp1 />
+    {message}
+  </div>
 );

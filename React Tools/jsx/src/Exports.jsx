@@ -1,6 +1,6 @@
 import React from "react";
 
-const App = () => {
+const DefaultExport = () => {
   let message = "Bye there!";
   if (Math.random() > 0.5) {
     message = "Hello there!";
@@ -8,7 +8,7 @@ const App = () => {
 
   const minValue = 5;
 
-  // !!!OBJECTS TO NOT DISPLAY other than as a PROP
+  // !!!OBJECTS DO NOT DISPLAY other than as a PROP
   return (
     <div>
       {/* Short hand JS functions are very useful to minimize functions above */}
@@ -35,4 +35,10 @@ const App = () => {
   );
 };
 
-export default App;
+//! This is a DEFAULT export -- You can import it as another name in index.js like MyApp becuase it is being exported as a default value
+export default DefaultExport;
+
+// !This is a NAMED export -- You can import it inside curly braces and the name cannot be changed once imported
+const message = 'hi';
+export {message}
+
