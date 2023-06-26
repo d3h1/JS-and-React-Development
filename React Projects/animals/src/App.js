@@ -1,11 +1,14 @@
 import React from 'react'
+import { useState } from 'react'
 import AnimalShow from './AnimalShow'
 
-const App = () => {
+function App() {
+  const handleClick = () => {
+    console.log('clicked');
+  }
   return (
     <div>
-      Show List Here
-      
+      <button onClick={handleClick}>Add To List</button>      
     </div>
   )
 }
