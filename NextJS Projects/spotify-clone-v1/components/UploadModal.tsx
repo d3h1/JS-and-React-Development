@@ -1,19 +1,25 @@
 "use client";
 
-import useUploadModal from "@/hooks/useUploadModal";
-import Modal from "./Modal";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import { useState } from "react";
-import Input from "./Input";
-import Button from "./Button";
+import uniqid from "uniqid";
+import React, { useState } from 'react';
+import { useSupabaseClient } from '@supabase/auth-helpers-react';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
+
+import useUploadModal from '@/hooks/useUploadModal';
 import { useUser } from "@/hooks/useUser";
-import uniqid from "uniqid"
+
+import Modal from './Modal';
+import Input from './Input';
+import Button from './Button';
 
 const UploadModal = () => {
   const [isLoading, setIsLoading] = useState(false);
   const uploadModal = useUploadModal();
+  const supabaseClient = useSupabaseClient();
   const { user } = useUser();
+  const router = useRouter();
 
   const { register, handleSubmit, reset } = useForm<FieldValues>({
     defaultValues: {
@@ -32,9 +38,10 @@ const UploadModal = () => {
   };
 
   const onSubmit: SubmitHandler<FieldValues> = async (values) => {
-    // upload to supabase
+    // ! Upload to Supabase
     try {
       setIsLoading(true);
+
       const imageFile = values.image?.[0];
       const songFile = values.song?.[0];
 
@@ -44,7 +51,54 @@ const UploadModal = () => {
         return; // After the error, we need to return so it doesnt keep trying
       }
 
-      const uniqueID = uniqid();
+      const uniqueID = uniqid(); // We can use this to safely upload songs
+      // ! Upload Song
+      const { data: songData, error: songError } = await supabaseClient.storage
+        .from("songs")
+        .upload(`song-${values.title}-${uniqueID}`, songFile, {
+          cacheControl: "3600",
+          upsert: false,
+        });
+
+      if (songError) {
+        setIsLoading(false);
+        return toast.error("Failed To Upload Song!");
+      }
+
+      // ! Upload Image
+      const { data: imageData, error: imageError } =
+        await supabaseClient.storage
+          .from("images")
+          .upload(`image-${values.title}-${uniqueID}`, imageFile, {
+            cacheControl: "3600",
+            upsert: false,
+          });
+
+      if (imageError) {
+        setIsLoading(false);
+        return toast.error("Failed to Upload Image!");
+      }
+
+      const { error: supabaseError } = await supabaseClient
+        .from("songs")
+        .insert({
+          user_id: user.id,
+          title: values.title,
+          author: values.author,
+          image_path: imageData.path,
+          song_path: songData.path,
+        });
+
+      if (supabaseError) {
+        setIsLoading(false);
+        return toast.error(supabaseError.message);
+      }
+
+      router.refresh();
+      setIsLoading(false);
+      toast.success("Song Created!");
+      reset();
+      uploadModal.onClose();
     } catch (error) {
       toast.error("Something went Wrong!");
     } finally {
