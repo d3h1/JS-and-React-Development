@@ -5,10 +5,15 @@ import Modal from "./Modal";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useState } from "react";
 import Input from "./Input";
+import Button from "./Button";
+import { toast } from "react-hot-toast";
+import { useUser } from "@/hooks/useUser";
+import uniqid from "uniqid"
 
 const UploadModal = () => {
-  const [isLoading, setIsLoading] = useState();
+  const [isLoading, setIsLoading] = useState(false);
   const uploadModal = useUploadModal();
+  const { user } = useUser();
 
   const { register, handleSubmit, reset } = useForm<FieldValues>({
     defaultValues: {
@@ -28,6 +33,23 @@ const UploadModal = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = async (values) => {
     // upload to supabase
+    try {
+      setIsLoading(true);
+      const imageFile = values.image?.[0];
+      const songFile = values.song?.[0];
+
+      // Checking if we have all missing fields
+      if (!imageFile || !songFile || !user) {
+        toast.error("Missing Fields!");
+        return; // After the error, we need to return so it doesnt keep trying
+      }
+
+      const uniqueID = uniqid();
+    } catch (error) {
+      toast.error("Something went Wrong!");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -37,13 +59,42 @@ const UploadModal = () => {
       isOpen={uploadModal.isOpen}
       onChange={onChange}
     >
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-4">
         <Input
           id="title"
           disabled={isLoading}
           {...register("title", { required: true })}
           placeholder="Song Title"
         />
+        <Input
+          id="author"
+          disabled={isLoading}
+          {...register("author", { required: true })}
+          placeholder="Song Author"
+        />
+        <div>
+          <div className="pb-1">Select a Song File</div>
+          <Input
+            id="song"
+            type="file"
+            disabled={isLoading}
+            accept=".mp3"
+            {...register("song", { required: true })}
+          />
+        </div>
+        <div>
+          <div className="pb-1">Select an Image</div>
+          <Input
+            id="image"
+            type="file"
+            disabled={isLoading}
+            accept="image/*"
+            {...register("image", { required: true })}
+          />
+        </div>
+        <Button disabled={isLoading} type="submit">
+          Create
+        </Button>
       </form>
     </Modal>
   );
