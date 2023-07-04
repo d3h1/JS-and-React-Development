@@ -9,6 +9,9 @@ import Button from "./Button";
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
+import useAuthModal from "@/hooks/useAuthModal";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useUser } from "@/hooks/useUser";
 
 interface HeaderProps {
   children: React.ReactNode;
@@ -17,9 +20,16 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ children, className }) => {
   const router = useRouter();
+  const authModal = useAuthModal();
 
-  const handleLogout = () => {
-    // Handle Logout in the future
+  const supabaseClient = useSupabaseClient();
+  const { user } = useUser();
+
+  const handleLogout = async () => {
+    const { error } = await supabaseClient.auth.signOut();
+
+    // TODO: Reset any playing songs in the future
+    router.refresh();
   };
 
   return (
@@ -60,14 +70,17 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
           {/* Doing this allows for dynamic features to work down the line  */}
           <>
             <div>
-                <Button onClick={() => {}} className="bg-transparent text-neutral-300 font-medium"> 
-                    Sign Up
-                </Button>
+              <Button
+                onClick={authModal.onOpen}
+                className="bg-transparent text-neutral-300 font-medium"
+              >
+                Sign Up
+              </Button>
             </div>
             <div>
-                <Button onClick={() => {}} className="bg-white px-6 py-2"> 
-                    Log In
-                </Button>
+              <Button onClick={authModal.onOpen} className="bg-white px-6 py-2">
+                Log In
+              </Button>
             </div>
           </>
         </div>
