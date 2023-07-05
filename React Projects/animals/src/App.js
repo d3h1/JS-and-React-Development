@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import ItemShow from './ItemShow'
+import './App.css'
 
 function getRandomItem () {
   const items = ['bird', 'cow', 'cat', 'dog', 'gator', 'horse']
@@ -42,8 +43,8 @@ function App() {
 
   return (
     <div className='container'>
-      <button onClick={handleClick}>Add To List</button>   
-      <div>{renderedItems}</div>
+      <button className='' onClick={handleClick}>Add To List</button>   
+      <div className=''>{renderedItems}</div>
     </div>
   )
 }
