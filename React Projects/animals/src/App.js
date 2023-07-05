@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react'
-import AnimalShow from './AnimalShow'
 
 function getRandomItem () {
   const items = ['bird', 'cow', 'cat', 'dog', 'gator', 'horse']
@@ -10,7 +9,8 @@ function getRandomItem () {
 
 
 function App() {
-  const [items, setItems] = useState('')
+  // const [items, setItems] = useState('')
+  const [items, setItems] = useState([])
 
   // This is how we do an array, also how useState works pretty much
   // const makeArray = () => {
@@ -23,7 +23,12 @@ function App() {
   
 
   const handleClick = () => {
-    setItems()
+    // ? This modifies a piece of state which we never want to do
+    // items.push(getRandomItem())
+
+    // *! This is the proper way to do it!
+    // * setItems  [(all items from previous array), (getRandomItem function for new item)]
+    setItems([...items, getRandomItem()])
     console.log('clicked');
   }
   
@@ -32,7 +37,7 @@ function App() {
   return (
     <div className='container'>
       <button onClick={handleClick}>Add To List</button>   
-      <p>Item is {items}</p>
+      <p>{items}</p>
     </div>
   )
 }
