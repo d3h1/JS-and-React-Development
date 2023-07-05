@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import ItemShow from './ItemShow'
 
 function getRandomItem () {
   const items = ['bird', 'cow', 'cat', 'dog', 'gator', 'horse']
@@ -31,13 +32,18 @@ function App() {
     setItems([...items, getRandomItem()])
     console.log('clicked');
   }
+
+  // Mapping through a listl
+  const renderedItems = items.map((item, index) => {
+    return <ItemShow type={item} key={index} />
+  })
   
   
 
   return (
     <div className='container'>
       <button onClick={handleClick}>Add To List</button>   
-      <p>{items}</p>
+      <div>{renderedItems}</div>
     </div>
   )
 }

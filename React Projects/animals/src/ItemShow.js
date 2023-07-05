@@ -1,8 +1,13 @@
 import React from 'react'
 
-const ItemShow = () => {
+const ItemShow = ({ type }) => {
   return (
-    <div>Item</div>
+    <div>
+      <p>
+      {type}
+      
+      </p>
+    </div>
   )
 }
 
