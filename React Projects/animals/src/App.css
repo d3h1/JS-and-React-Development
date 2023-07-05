@@ -27,3 +27,12 @@ p {
 .add-button:active {
   scale: 0.98;
 }
+
+.animal-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  width: 400px;
+  
+}
