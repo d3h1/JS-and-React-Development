@@ -16,12 +16,15 @@ const svgMap = {
 
 const ItemShow = ({ type }) => {
   const [clicks, setClicks] = useState(0);
+
   const handleClick = () => {
   setClicks(clicks + 1)
   }
+
   return (
     <div onClick={handleClick}>
       <img alt='item' src={svgMap[type]} />
+      <img src={heart} alt="heart" style={{ width: 10 + 10*clicks + 'px' }} />
     </div>
   )
 }
