@@ -2,37 +2,4 @@
   background: #333
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  letter-spacing: 1px;
-  align-items: center;
-}
-
-small {
-  margin-top: 1rem;
-  color: #fff;
-}
-
-p {
-  color: white;
-  font-size: 15px; 
-}
-
-button {
-  background: #fff;
-  width: 100px;
-  padding: 1rem;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #888;
-}
-
-button:active {
-  scale: 0.98;
-}
 

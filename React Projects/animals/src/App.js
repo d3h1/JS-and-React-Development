@@ -43,8 +43,8 @@ function App() {
 
   return (
     <div className='container'>
-      <button className='' onClick={handleClick}>Add To List</button>   
-      <div className=''>{renderedItems}</div>
+      <button className='add-button' onClick={handleClick}>Add To List</button>   
+      <div className='animal-list'>{renderedItems}</div>
     </div>
   )
 }
