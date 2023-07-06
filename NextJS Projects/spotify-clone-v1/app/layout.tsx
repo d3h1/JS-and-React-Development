@@ -10,7 +10,7 @@ import ToasterProvider from "@/providers/ToasterProvider";
 const font = Figtree({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Spotify Clone V1",
+  title: "Music Playback Clone",
   description: "Listen to Music",
 };
 
