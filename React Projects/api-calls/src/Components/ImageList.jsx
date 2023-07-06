@@ -1,7 +1,11 @@
-const ImageList = (images) => {
+import ImageShow from "./ImageShow"
+
+const ImageList = ({ images }) => {
+
   return ( 
+
     <div>
-      Image List
+      hello: {images.length}
     </div>
    );
 }
