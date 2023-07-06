@@ -1,4 +1,4 @@
-const ImageList = () => {
+const ImageList = (images) => {
   return ( 
     <div>
       Image List
