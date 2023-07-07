@@ -3,6 +3,14 @@ export default {
   content: ['./src/**/*.{js,jsx}'],
   theme: {
     extend: {
+      colors: {
+        primary: "#181719",
+        backgroundlight: "#e1e0e0b6",
+        highlight: "#6469ff",
+        borderlight: "#e6ebf4",
+        darktext: "#222328",
+        lighttext: "#666e75",
+      },
       screens: {
         xs: '480px',
       },
