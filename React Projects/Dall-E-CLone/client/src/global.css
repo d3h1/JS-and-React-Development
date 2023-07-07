@@ -19,5 +19,6 @@
  
 .prompt::-webkit-scrollbar-thumb {
   background-color: #666e75;
+  text-color: #dcdcdcb6;
   border-radius: 5px;
 }

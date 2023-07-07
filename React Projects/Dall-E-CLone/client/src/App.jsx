@@ -19,7 +19,7 @@ const App = () => {
         </Link>
 
       </header>
-      <main className='sm: p-8 px-4 py-8 w-full bg-backgroundlight min-h-[calc(100vh-73px)]'>
+      <main className='sm: p-8 px-4 py-8 w-full bg-bglight min-h-[calc(100vh-73px)]'>
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/create-post" element={<CreatePost/>} />
