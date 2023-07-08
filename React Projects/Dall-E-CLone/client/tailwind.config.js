@@ -7,6 +7,7 @@ export default {
         primary: "#181719",
         bgwhite: "#ECECF1",
         bglight: "#dcdcdcb6",
+        bgdark: "#10131f",
         highlight: "#6469ff",
         borderlight: "#e6ebf4",
         darktext: "#222328",
