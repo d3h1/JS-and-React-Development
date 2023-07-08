@@ -16,7 +16,7 @@ app.use(express.json({ limit: '50mb' }));
 
 // Creating API endpoints that hook onto from front end 
 app.use('/api/v1/posts', postRoutes)
-app.use('/api/v1/posts', dalleRoutes)
+app.use('/api/v1/dalle', dalleRoutes)
 
 // Allows us to get responses and requests
 app.get('/', async (req,res) => {
