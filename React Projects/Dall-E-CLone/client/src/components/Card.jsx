@@ -12,7 +12,7 @@ const Card = ({ _id, name, prompt, photo }) => {
       <div className="group-hover:flex flex-col max-h-[94.5%] hidden absolute bottom-0 left-0 right-0 bg-bgdark m-2 p-4 rouned-md">
         <p className="text-white overflow-y-auto prompt text-md">{prompt}</p>
         <div className="mt-5 flex justify-between items-center gap-2">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <div className="w-7 h-7 rounded-full object-cover bg-green-700 flex justify-center items-center font-bold text-center text-xs">
               {name[0]}
             </div>
